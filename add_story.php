@@ -5,21 +5,25 @@
 	<div class="panel panel-info">
 		<div class="panel-body">
 			<div class="form-add">
-				<form>
+				<form id="add_story" action="methods/addstory.php" method="post">
 					<div class="form-group">
-						<label>Title</label>
-						<input placeholder="Title Here" type="text" class="form-control"></input>
+						<label>Story Title</label>
+						<input name="title" placeholder="Title Here" type="text" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<label>Author</label>
-						<input placeholder="Author Name" type="text" class="form-control"></input>
+						<input name="author" placeholder="Author Name" type="text" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<label>Detail</label>
-						<textarea class="form-control"  placeholder="Detail" rows="8"></textarea>
+						<label>Story Image</label>
+						<input name="image" type="file" class="btn btn-info" accept="image/*"></input>
+					</div>
+					<div class="form-group">
+						<label>Story Detail</label>
+						<textarea name="detail" class="form-control"  placeholder="Detail" rows="8"></textarea>
 					</div>
 					<div class="form-group" style="text-align: center;">
-						<button type="submit" class="btn btn-info">Submit</button>
+						<button name="btn-save" type="submit" class="btn btn-info">Submit</button>
 					</div>
 				</form>
 			</div>
@@ -30,3 +34,10 @@
 <?php
 	include 'footer.php';
 ?>
+<script type="text/javascript">
+	$(function() {
+	  $('#add_story').ajaxForm(function(){
+	  	$('#add_story').clearForm();
+	  });
+	});
+</script>
