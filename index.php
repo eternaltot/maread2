@@ -1,5 +1,6 @@
 <?php
 	include 'header.php';
+    include 'methods/dbconfig.php';
 ?>
 <!-- Main Content -->
         <div class="maincontent container">
@@ -14,40 +15,34 @@
                 </div>
                 <div class="bookmark-list-row">
                 <div class="block-row">
+                <?php
+                    $sql = "SELECT * FROM maread_story order by ID desc limit 6 ";
+                    $result = $conn->query($sql);
+                    if($result->num_rows > 0){
+                        while ($row = $result->fetch_assoc()) {
+                            $title = $row['title'];
+                            $likes = $row['likes'];
+                            $img_path = $row['img_path'];
+                ?>
                     <div class="col-3">
                         <div class="feature-thumbnail">
-                            <img src="images/hilight.jpg">
+                            <img src="<?php echo $img_path; ?>">
                         </div>
                         <div class="title-content">
-                            <h3 class="title-article">ขอบฟ้า ขอบฝั่ง สายน้ำและทะเล ขอบฟ้า ขอบฝั่ง สายน้ำและทะเล</h3>
+                            <h3 class="title-article"><?php echo $title;?></h3>
                             <div class="favorite-data">
-                                <i class="material-icons md-light favorite">favorite</i><span>1234567 </span>
+                                <i class="material-icons md-light favorite">favorite</i><span><?php echo $likes;?></span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-3">
-                        <div class="feature-thumbnail">
-                            <img src="images/hilight.jpg">
-                        </div>
-                        <div class="title-content">
-                            <h3 class="title-article">ขอบฟ้า ขอบฝั่ง สายน้ำและทะเล</h3>
-                            <div class="favorite-data">
-                                <i class="material-icons md-light favorite">favorite</i><span>1234567 </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="feature-thumbnail">
-                            <img src="images/hilight.jpg">
-                        </div>
-                        <div class="title-content">
-                            <h3 class="title-article">ขอบฟ้า ขอบฝั่ง สายน้ำและทะเล</h3>
-                            <div class="favorite-data">
-                                <i class="material-icons md-light favorite">favorite</i><span>1234567 </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
+                <?php
+                        }
+                    }
+                    /* close statement and connection */
+                    $conn->close();
+                ?>
+                    
+                    <!-- <div class="col-3">
                         <div class="feature-thumbnail">
                             <img src="images/hilight.jpg">
                         </div>
@@ -80,6 +75,28 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-3">
+                        <div class="feature-thumbnail">
+                            <img src="images/hilight.jpg">
+                        </div>
+                        <div class="title-content">
+                            <h3 class="title-article">ขอบฟ้า ขอบฝั่ง สายน้ำและทะเล</h3>
+                            <div class="favorite-data">
+                                <i class="material-icons md-light favorite">favorite</i><span>1234567 </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="feature-thumbnail">
+                            <img src="images/hilight.jpg">
+                        </div>
+                        <div class="title-content">
+                            <h3 class="title-article">ขอบฟ้า ขอบฝั่ง สายน้ำและทะเล</h3>
+                            <div class="favorite-data">
+                                <i class="material-icons md-light favorite">favorite</i><span>1234567 </span>
+                            </div>
+                        </div>
+                    </div> -->
                     </div>
                 </div>
             </div>

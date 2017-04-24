@@ -7,23 +7,19 @@
 			<div class="form-add">
 				<form id="add_story" action="methods/addstory.php" method="post">
 					<div class="form-group">
-						<label>Story Title</label>
+						<label>ชื่อเรื่อง</label>
 						<input name="title" placeholder="Title Here" type="text" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<label>Author</label>
-						<input name="author" placeholder="Author Name" type="text" class="form-control"></input>
-					</div>
-					<div class="form-group">
-						<label>Story Image</label>
+						<label>Cover Image</label>
 						<input name="image" type="file" class="btn btn-info" accept="image/*"></input>
 					</div>
 					<div class="form-group">
-						<label>Story Detail</label>
+						<label>คำโปรย</label>
 						<textarea name="detail" class="form-control"  placeholder="Detail" rows="8"></textarea>
 					</div>
 					<div class="form-group" style="text-align: center;">
-						<button name="btn-save" type="submit" class="btn btn-info">Submit</button>
+						<button name="btn-save" type="submit" class="btn btn-info" style="border-radius:20px;">ถัดไป</button>
 					</div>
 				</form>
 			</div>
@@ -36,8 +32,15 @@
 ?>
 <script type="text/javascript">
 	$(function() {
-	  $('#add_story').ajaxForm(function(){
-	  	$('#add_story').clearForm();
-	  });
+		var option = {
+			dataType : "json",
+			  success: function(data) {
+			  	if(data.result)
+			    	window.location.href ="add_chapter.php?story_id="+data.result;
+				else
+					console.log(data.error);
+			  }
+		};
+	  $('#add_story').ajaxForm(option);
 	});
 </script>

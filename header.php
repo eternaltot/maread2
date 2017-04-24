@@ -42,7 +42,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="javascript:void(0);" class="navbar-brand navbar-brand-custome"><img src="images/logo_mareads.png" /></a>
+                    <a href="index.php" class="navbar-brand navbar-brand-custome"><img src="images/logo_mareads.png" /></a>
                 </div>
                 <div class="user-box col-md-4">
                     <div class="dropdown pmd-dropdown pmd-user-info">

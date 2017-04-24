@@ -5,9 +5,7 @@ if(isset($_POST['btn-save']))
 {
 
 $title = $_POST['title'];
-$author = $_POST['author'];
 $detail = $_POST['detail'];
-
 
 if(isset($_FILES["image"]["type"]))
 	{
@@ -19,7 +17,9 @@ if(isset($_FILES["image"]["type"]))
 		&& in_array($file_extension, $validextensions)){
 			if ($_FILES["image"]["error"] > 0)
 			{
-				echo "Return Code: " . $_FILES["image"]["error"] . "<br/><br/>";
+				$error = "Return Code: " . $_FILES["image"]["error"];
+				$err = array("error" => $error);
+				echo json_encode($err);
 			}
 			else
 			{
@@ -41,11 +41,17 @@ if(isset($_FILES["image"]["type"]))
 				$likes = 0;
 				$stmt->bind_param("ssissii", $title,$slug,$author,$detail,$pathsave,$category_ID,$likes);
 				$stmt->execute();
+				$last_id = $stmt->insert_id;
 				/* close statement and connection */
 				$stmt->close();
-				/* close connection */
-				$mysqli->close();
+				$result = array("result" => $last_id);
+
+				echo json_encode($result);
 			}
+		}else if($_FILES["image"]["size"]>=10000000){
+			$error = "ขนาดไฟล์ใหญ่เกินกำหนด กรุณาย่อขนาดไฟล์รูปภาพ";
+			$err = array("error" => $error);
+			echo json_encode($err);
 		}
 	}
 }
