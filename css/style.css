@@ -438,12 +438,33 @@ img {
     margin-right: -20px;
     margin-bottom: 30px;
 }
-.footer-ep .like-count {
+.footer-ep .like-count, .footer-ep .like-count i {
     color: #e76c6c;
 }
 .footer-ep .navigator-ep {
     color: #fff;
     text-align: center;
+}
+.footer-ep .like-count span.count {
+    position: relative;
+    margin-left: 5px;
+    top: -1px;
+    letter-spacing: 1px;
+}
+.footer-ep .like-count i {
+    position: relative;
+    top: 5px;
+}
+.navigator-ep .number-ep {
+    font-size: 24px;
+    font-style: italic;
+    margin-right: 9px;
+    margin-left: 6px;
+}
+.footer-ep .navigator-ep i {
+    position: relative;
+    top: 6px;
+    font-size: 24px;
 }
 
 @media (min-width: 768px) {
