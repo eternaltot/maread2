@@ -25,6 +25,9 @@ if(isset($_POST['btn-save']))
 	$stmt->bind_param("ississiii", $chapter,$title,$slug,$author,$detail,$detail_author,$category_ID,$story_id,$likes);
 	$stmt->execute();
 	/* close statement and connection */
+	$stmt = $conn->prepare("UPDATE maread_story SET updatedate = CURRENT_TIMESTAMP WHERE ID = ?");
+	$stmt->bind_param("i",$story_id);
+	$stmt->execute();
 	$stmt->close();
 	echo $slug;
 			

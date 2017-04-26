@@ -1,6 +1,5 @@
 <?php
 	include 'header.php';
-	include 'methods/dbconfig.php';
 
 	$slug = $_GET['slug'];
 
@@ -24,15 +23,15 @@
 			<div class="form-add">
 				<form id="edit_story" action="methods/editstory.php" method="post">
 					<input type="hidden" name="slug" value="<?php echo $slug;?>">
-					<div class="form-group">
+					<div class="form-group pmd-textfield">
 						<label>ชื่อเรื่อง</label>
 						<input name="title" placeholder="Title Here" type="text" class="form-control" value="<?php echo $title;?>"></input>
 					</div>
-					<div class="form-group">
+					<div class="form-group ">
 						<label>Cover Image</label>
 						<input name="image" type="file" class="btn btn-info" accept="image/*"></input>
 					</div>
-					<div class="form-group">
+					<div class="form-group pmd-textfield">
 						<label>คำโปรย</label>
 						<textarea name="detail" class="form-control"  placeholder="Detail" rows="8"><?php echo $detail; ?></textarea>
 					</div>

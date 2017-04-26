@@ -1,6 +1,5 @@
 <?php
 	include 'header.php';
-	include 'methods/dbconfig.php';
 	$story_id = $_GET["story_id"];
 	$title = "";
 
@@ -18,13 +17,13 @@
 		<div class="panel panel-info">
 			<div class="panel-body">
 				<div class="form-add">
-					<div class="form-group">
-						<label>ชื่อตอน</label>
-						<input name="title" placeholder="Chapter Title Here" type="text" class="form-control"></input>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="title" class="control-label">ชื่อตอน</label>
+						<input id="title" name="title" type="text" class="form-control"></input>
 					</div>
-					<div class="form-group">
-						<label>เนื้อเรื่อง</label>
-						<textarea name="detail" class="form-control"  placeholder="Chapter Detail" rows="8"></textarea>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="detail" class="control-label">เนื้อเรื่อง</label>
+						<textarea id="detail" name="detail" class="form-control" rows="8"></textarea>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="story_id" value="<?php echo $story_id; ?>"></input>
@@ -35,9 +34,9 @@
 		<div class="panel panel-info">
 			<div class="panel-body">
 				<div class="form-add">
-					<div class="form-group">
-						<label>คำพูดจากนักเขียน</label>
-						<textarea name="detail_author" class="form-control" rows="8"></textarea>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="detail_author" class="control-label">คำพูดจากนักเขียน</label>
+						<textarea id="detail_author" name="detail_author" class="form-control" rows="8"></textarea>
 					</div>
 					<div class="form-group" style="text-align: center;">
 						<button name="btn-save" type="submit" class="btn btn-info" style="border-radius:20px;">บันทึก</button>

@@ -1,6 +1,5 @@
 <?php
 	include "header.php";
-	include "methods/dbconfig.php";
 	$slug = $_GET['slug'];
 	$ID = "";
 	$title = "";

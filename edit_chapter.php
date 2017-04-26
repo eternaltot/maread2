@@ -1,6 +1,5 @@
 <?php
 	include 'header.php';
-	include 'methods/dbconfig.php';
 	$chapter_slug = $_GET["slug"];
 	$sql = "SELECT * FROM maread_chapter WHERE slug like '".$chapter_slug."' limit 1";
 	$result = $conn->query($sql);
@@ -19,13 +18,13 @@
 		<div class="panel panel-info">
 			<div class="panel-body">
 				<div class="form-add">
-					<div class="form-group">
-						<label>ชื่อตอน</label>
-						<input name="title" placeholder="Chapter Title Here" type="text" class="form-control" value="<?php echo $title;?>"></input>
+					<div class="form-group pmd-textfield">
+						<label for="title" class="control-label">ชื่อตอน</label>
+						<input id="title" name="title" type="text" class="form-control" value="<?php echo $title;?>"></input>
 					</div>
-					<div class="form-group">
-						<label>เนื้อเรื่อง</label>
-						<textarea name="detail" class="form-control"  placeholder="Chapter Detail" rows="8"><?php echo $detail;?></textarea>
+					<div class="form-group pmd-textfield">
+						<label for="detail" class="control-label">เนื้อเรื่อง</label>
+						<textarea id="detail" name="detail" class="form-control"  rows="8"><?php echo $detail;?></textarea>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="chapter_id" value="<?php echo $chapter_ID; ?>"></input>
@@ -36,12 +35,12 @@
 		<div class="panel panel-info">
 			<div class="panel-body">
 				<div class="form-add">
-					<div class="form-group">
-						<label>คำพูดจากนักเขียน</label>
-						<textarea name="detail_author" class="form-control" rows="8"><?php echo $detail_author;?></textarea>
+					<div class="form-group pmd-textfield">
+						<label for="detail_author" class="control-label">คำพูดจากนักเขียน</label>
+						<textarea id="detail_author" name="detail_author" class="form-control" rows="8"><?php echo $detail_author;?></textarea>
 					</div>
 					<div class="form-group" style="text-align: center;">
-						<button name="btn-save" type="submit" class="btn btn-info" style="border-radius:20px;">บันทึก</button>
+						<button name="btn-save" type="submit" class="btn btn-info">บันทึก</button>
 					</div>
 				</div>
 			</div>

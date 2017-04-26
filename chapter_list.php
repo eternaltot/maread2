@@ -1,6 +1,5 @@
 <?php
 	include 'header.php';
-	include 'methods/dbconfig.php';
 
 	$slug = $_GET['slug'];
 
@@ -33,7 +32,7 @@
             <img src="<?php echo $img_path;?>">
         </div>
         <div class="detail-count-box">
-            <span class="favorite"><i class="material-icons md-light">favorite</i><?php echo $likes > 1000 ? ($likes/1000)."K" : $likes; ?></span>
+            <span class="favorite"><a href="javascript:void(0);" class="likes"><i class="material-icons md-light">favorite</i></a><span class="num-like"><?php echo $likes > 1000 ? ($likes/1000)."K" : $likes; ?></span></span>
             <span class="watched"><i class="material-icons md-light">visibility</i><?php echo $views > 1000 ? ($views/1000)."K" : $views; ?></span>
             <span class="bookmark"><i class="material-icons md-light">bookmark</i><?php echo $bookmarks > 1000 ? ($bookmarks/1000)." K" : $bookmarks; ?></span>
             <br><span class="name-author">By Klanarong</span>
@@ -44,7 +43,7 @@
         
         <div class="edit-box"><a href="edit_story.php?slug=<?php echo $slug;?>" class="pmd-ripple-effect"><i class="material-icons md-light icon-edit">edit</i></a></div>
     </div>
-    <div class=" home-section-3 story-section">
+    <div class="section-row home-section-3 story-section storyedit-section">
         <div class="popular head-title">
             <h3 class="text-title"><?php echo $title;?></h3>
         </div>
@@ -63,6 +62,7 @@
                 $result = $conn->query($sql);
                 if($result->num_rows > 0){
                         while ($row = $result->fetch_assoc()) {
+                            $chapter_id = $row['ID'];
                             $chapter_title = $row['title'];
                             $chapter_likes = $row['likes'];
                             $chapter_slug = $row['slug'];
@@ -85,7 +85,7 @@
                                     <span class="dropdown pmd-dropdown clearfix delete">
                                     <a href="javascript:void(0);" class="pmd-ripple-effect dropdown-toggle pmd-dropdown-hover" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true"><i class="material-icons md-light icon-delete">delete</i></a>
                                     <ul aria-labelledby="dropdownMenu2" role="menu" class="dropdown-menu">
-        <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">ลบเรื่องนี้</a></li>
+        <li role="presentation"><a href="javascript:void(0);" class="btn-delete" data-value="<?php echo $chapter_id;?>" tabindex="-1" role="menuitem">ลบเรื่องนี้</a></li>
     </ul>
     </span>
                                 </div>
@@ -288,8 +288,20 @@
                 dataType : "json",
                 success: function( data ) {
                     console.log(data);
-                    $(".like-count span").html(data.result);
-                    $(".likes i").html("favorite");
+                    $(".num-like").html(data.result);
+                }
+            });
+        });
+        $(".btn-delete").on('click',function(){
+            var id = $(this).data("value");
+            var url_delete = "methods/delete_chapter.php?id="+id;
+            $.ajax({
+                url: url_delete,
+                data: null,
+                dataType : "json",
+                success: function( data ) {
+                    if(data.result == "delete success")
+                    location.reload();
                 }
             });
         });
