@@ -145,8 +145,10 @@ img {
 }
 
 .hilight-homepage img {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    /*border-top-right-radius: 10px;*/
+    /*border-top-left-radius: 10px;*/
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-row {
@@ -183,6 +185,7 @@ img {
 .hilight-homepage {
     margin-left: -20px;
     margin-right: -20px;
+    background-image: url('../images/icon_aboutus.png');
 }
 
 .popular-list .pmd-card-list {
