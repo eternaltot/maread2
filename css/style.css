@@ -23,10 +23,10 @@
 }
 
 body {
-    background-color: #71aac8;
+    /*background-color: #71aac8;*/
+    background-color: #149f8e;
     padding-top: 70px;
     font-size: 18px;
-    /*background-color: #999;*/
 }
 
 body,
@@ -63,6 +63,13 @@ img {
 
 .navbar-inverse .navbar-nav>li>a {
     color: #fff;
+    font-size: 21px;
+    letter-spacing: 1px;
+    /*background-color: transparent!important;*/
+}
+.dropdown-menu>li>a {
+    font-size: 21px;
+    letter-spacing: 1px;
 }
 
 .navbar-inverse .navbar-brand {
@@ -72,6 +79,7 @@ img {
 .user-box {
     display: inline-block;
     float: right;
+    padding-left: 0px;
 }
 
 #box-row-2 {
@@ -98,6 +106,16 @@ img {
 
 .search-box .btn {
     background-color: transparent;
+    min-width: 0px;
+    margin-top: 8px;
+    padding: 7px 5px 0px 5px;
+}
+
+.search-box .form-control {
+    max-width: 80%;
+    float: left;
+    margin: 10px 0px;
+    font-size: 21px;
 }
 
 .footer-maread {
@@ -121,7 +139,8 @@ img {
 }*/
 
 .navbar {
-    background-color: #71a9c9;
+    /*background-color: #71a9c9;*/
+    background-color: #149f8e;
 }
 
 .hilight-homepage img {
@@ -360,6 +379,56 @@ img {
     margin-bottom: 10px;
 }
 
+.update:after, .new:after {
+    content: url('../images/ribbinupdate.png');
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 66px;
+    width: 66px;
+    margin-bottom: -66px;
+    z-index: 1;
+}
+
+.new:after {
+    content: url(../images/ribbinnew.png);
+}
+
+/*.update:before {
+    content: url('../images/ribbinupdate.png');
+    display: block;
+    position: relative;
+    top: -1px;
+    right: -83px;
+    margin-bottom: -71px;
+    z-index: 1;
+}*/
+
+.home-popular .popular-list .media-body h3 {
+    margin-top: 10px;
+}
+
+.home-popular .popular-list .thumbnail {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.home-popular .popular-list .list-group {
+    width: 100%;
+}
+
+.register-write a, .register-read a {
+    background-color: #ffffb5!important;
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+    color: #149f8e!important;
+    margin-top: 15px;
+}
+
 
 /*-- Story Read --*/
 
@@ -494,12 +563,23 @@ img {
 .add-newstory .feature-thumbnail {
     background-color: #bddef0;
 }
-.section-profile-author {
+
+.section-profile-author, .section-head-page {
     margin-bottom: -90px;
 }
-.section-profile-author + .section-row {
+
+.section-profile-author + .section-row, .section-head-page + .section-row {
     padding-top: 90px;
 }
+
+.author-pic, .title-head-pic {
+    background-color: #149f8e;
+    width: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
 .head-titlebar img {
     margin-left: auto;
     margin-right: auto;
@@ -507,7 +587,8 @@ img {
     border: solid 4px #fff;
     width: 75px;
 }
-.author-name h3 {
+
+.author-name h3, .category-name h3 {
     font-size: 36px;
     color: #71a9c9;
     font-style: italic;
@@ -515,6 +596,7 @@ img {
     margin-top: 0px;
     margin-bottom: 3px;
 }
+
 .botton-login button {
     background-color: #71a9c9!important;
     padding: 0px 15px;
@@ -525,16 +607,46 @@ img {
     letter-spacing: 1px;
     border-radius: 10px;
 }
+
 .botton-login {
     text-align: center;
 }
 
+.add-newstory .feature-thumbnail .addbox i.edit {
+    position: absolute;
+    top: 5px;
+    left: -6px;
+    font-size: 50px;
+}
 
-/*.add-newstory .feature-thumbnail img {
-    position: initial;
-    margin-left: auto;
-    margin-right: auto;
-}*/
+.add-newstory .feature-thumbnail .addbox i.add {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #71a9c9;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.add-newstory .feature-thumbnail .addbox span {
+    position: relative;
+    top: 50px;
+    left: -9px;
+    font-size: 21px;
+    color: #71a9c9;
+}
+
+.addbox {
+    /*position: absolute;
+    top: 8%;
+    left: 24%;*/
+}
+
+.add-newstory .feature-thumbnail {
+    background-image: url(../images/addnewstory.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 
 /*-- Story --*/
@@ -709,6 +821,23 @@ img {
     font-size: 24px;
 }
 
+/*-- Category Page --*/
+.sort-by {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.sort-by .form-control {
+    padding: 0px 12px;
+    font-size: 23px;
+    color: #75abcb;
+    border: none;
+    box-shadow: none;
+}
+.sort-by .form-control:focus {
+    border-color: none;
+}
+
 @media (min-width: 768px) {
     /*.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
     margin-right: 0;
@@ -721,14 +850,21 @@ img {
         width: 100%;
         text-align: center;
     }
-    span.menu-mobile {
+    /*span.menu-mobile {
         display: none;
+    }*/
+    .logo-mobile {
+        display: none!important;
     }
     body {
         padding-top: 170px;
     }
     .navbar-nav>li {
         width: 12.5%;
+        text-align: center;
+    }
+    .navbar-nav {
+        float: none;
     }
     .col-md-4 {
         width: 33.3333%;
@@ -763,6 +899,15 @@ img {
         padding-left: 60px;
         min-width: 170px;
     }
+    .home-popular .popular-list .media-left.number {
+    padding-right: 30px;
+    padding-left: 30px;
+    min-width: 100px;
+}
+.home-popular .popular-list .pmd-list .list-group-item {
+    width: 50%;
+    float: left;
+}
 }
 
 @media (min-width: 992px) {
@@ -772,6 +917,9 @@ img {
     }
     .title-numberep {
         max-width: 940px;
+    }
+    .search-box .form-control {
+        max-width: 70%;
     }
 }
 
@@ -783,11 +931,17 @@ img {
     .title-numberep {
         max-width: 1140px;
     }
+    .search-box .form-control {
+        max-width: 60%;
+    }
 }
 
 @media (max-width: 767px) {
-    span.menu-desktop {
+    /*span.menu-desktop {
         display: none;
+    }*/
+    .logo-desktop {
+        display: none!important;
     }
     .search-box {
         display: none;
@@ -813,12 +967,16 @@ img {
         margin-left: -30px;
         margin-right: -30px;
     }
-    .delete .pmd-dropdown-menu-container, .edit .pmd-dropdown-menu-container {
+    .delete .pmd-dropdown-menu-container,
+    .edit .pmd-dropdown-menu-container {
         right: 0px;
     }
     .edit-delete-box {
-    top: initial;
-    bottom: 10px;
-    right: 20px;
-}
+        top: initial;
+        bottom: 10px;
+        right: 20px;
+    }
+    .pmd-navbar .navbar-brand {
+        padding: 15px 15px 15px 15px;
+    }
 }
