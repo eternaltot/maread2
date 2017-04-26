@@ -65,7 +65,7 @@ img {
     color: #fff;
     font-size: 21px;
     letter-spacing: 1px;
-    background-color: transparent!important;
+    /*background-color: transparent!important;*/
 }
 .dropdown-menu>li>a {
     font-size: 21px;
@@ -379,7 +379,7 @@ img {
     margin-bottom: 10px;
 }
 
-.update:after {
+.update:after, .new:after {
     content: url('../images/ribbinupdate.png');
     display: block;
     position: absolute;
@@ -389,6 +389,10 @@ img {
     width: 66px;
     margin-bottom: -66px;
     z-index: 1;
+}
+
+.new:after {
+    content: url(../images/ribbinnew.png);
 }
 
 /*.update:before {
@@ -411,6 +415,18 @@ img {
     border: none;
     border-radius: 0px;
     margin-bottom: 0px;
+}
+
+.home-popular .popular-list .list-group {
+    width: 100%;
+}
+
+.register-write a, .register-read a {
+    background-color: #ffffb5!important;
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+    color: #149f8e!important;
+    margin-top: 15px;
 }
 
 
@@ -886,6 +902,10 @@ img {
     padding-right: 30px;
     padding-left: 30px;
     min-width: 100px;
+}
+.home-popular .popular-list .pmd-list .list-group-item {
+    width: 50%;
+    float: left;
 }
 }
 
