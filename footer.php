@@ -27,6 +27,9 @@
             Header.init();
         }());
     </script> -->
+    <?php
+        $conn->close();
+    ?>
 </body>
 
 </html>

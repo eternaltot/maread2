@@ -1,5 +1,6 @@
 <?php
 	include 'header.php';
+	include 'methods/dbconfig.php';
 ?>
 <div class="maincontent container" style="">
 	<div class="panel panel-info">

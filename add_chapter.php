@@ -12,8 +12,6 @@
 	}else{
 		$title = "Not Found";
 	}
-	/* close statement and connection */
-	$conn->close();
 ?>
 <div class="maincontent container" style="">
 	<form id="add_chapter" action="methods/addchapter.php" method="post">
@@ -57,7 +55,7 @@
 	$(function() {
 		var option = {
 			  success: function(data) {
-			    window.location.replace("story_read.php?slug="+data);
+			    window.location.replace("read_chapter.php?slug="+data);
 			  }
 		};
 	  $('#add_chapter').ajaxForm(option);

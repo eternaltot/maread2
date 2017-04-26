@@ -465,13 +465,14 @@ img {
 .footer-ep .like-count span.count {
     position: relative;
     margin-left: 5px;
-    top: -1px;
+    /*top: -1px;*/
     letter-spacing: 1px;
+    font-size: x-large;
 }
 
 .footer-ep .like-count i {
     position: relative;
-    top: 5px;
+    /*top: 5px;*/
 }
 
 .navigator-ep .number-ep {
