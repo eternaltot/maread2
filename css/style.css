@@ -439,11 +439,18 @@ img {
     right: 5px;
     top: 1px;
 }
+
 .register-write a:before {
     content: url(../images/iconregister_write.png);
     position: relative;
     right: 5px;
     top: 1px;
+}
+
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover {
+    background-color: transparent!important;
 }
 
 
@@ -487,7 +494,8 @@ img {
 }
 
 .story-content,
-.author-box {
+.author-box,
+.about-detail {
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
@@ -841,6 +849,18 @@ img {
     font-size: 24px;
 }
 
+.heading-toppage {
+    background-color: transparent;
+    margin-bottom: 0px;
+}
+
+.heading-toppage h3 {
+    font-size: 36px;
+    color: #fff;
+    font-style: italic;
+    text-align: center;
+}
+
 
 /*-- Category Page --*/
 
@@ -862,6 +882,19 @@ img {
     border-color: none;
 }
 
+/*-- About Page --*/
+
+.about-detail {
+    padding-top: 30px;
+}
+.about-detail h4 {
+    font-size: 36px;
+    color: #71a9c9;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
 @media (min-width: 768px) {
     /*.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
     margin-right: 0;
@@ -881,7 +914,7 @@ img {
         display: none!important;
     }
     body {
-        padding-top: 170px;
+        padding-top: 140px;
     }
     .navbar-nav>li {
         width: 12.5%;
