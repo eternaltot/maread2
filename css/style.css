@@ -185,6 +185,7 @@ img {
 .hilight-homepage {
     margin-left: -20px;
     margin-right: -20px;
+    /*background-image: url(../images/icon_aboutus.png);*/
 }
 
 .popular-list .pmd-card-list {
