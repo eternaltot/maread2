@@ -32,10 +32,10 @@
 		                        $result = $conn->query($sql);
 		                        if($result->num_rows > 0){
 		                            while ($row = $result->fetch_assoc()) {
-		                                $title = $row['title'];
+		                                $category_title = $row['title'];
 		                                $category_id = $row['ID'];
 		                    ?>
-                            <option value="<?php echo $category_id;?>" <?php echo $category_ID == $category_id ? "selected" : "" ?>><?php echo $title;?></option>
+                            <option value="<?php echo $category_id;?>" <?php echo $category_ID == $category_id ? "selected" : "" ?>><?php echo $category_title;?></option>
                             <?php
 	                            	}
 	                            }
