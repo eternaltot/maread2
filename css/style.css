@@ -167,7 +167,7 @@ img {
 
 .head-title .text-title {
     float: left;
-    font-size: 36px;
+    font-size: 32px;/*27-4-2017*/
     color: #71aac8;
     font-style: italic;
 }
@@ -205,7 +205,7 @@ img {
 }
 
 .popular-list .number span {
-    font-size: 60px;
+    font-size: 50px;/*27-4-2017*/
     color: #7a858b;
 }
 
@@ -221,9 +221,10 @@ img {
 }
 
 .popular-list .media-body h3 {
-    font-size: 26px;
+    font-size: 21px;/*27-4-2017*/
     color: #7a858b;
     line-height: 100%;
+    margin-bottom: 10px;/*27-4-2017*/
 }
 
 .favorite-data,
@@ -358,8 +359,9 @@ img {
 }
 
 .title-article {
-    font-size: 24px;
+    font-size: 17px;/*27-4-2017*/
     color: #7a858b;
+    line-height: 145%;/*27-4-2017*/
 }
 
 .favorite-data i {
@@ -370,7 +372,7 @@ img {
     position: relative;
     top: -5px;
     left: 3px;
-    font-size: 22px;
+    font-size: 15px;/*27-4-2017*/
 }
 
 .latest {
@@ -427,6 +429,7 @@ img {
     border: none;
     border-radius: 0px;
     margin-bottom: 0px;
+    background-color: #999;/*27-4-2017*/
 }
 
 .home-popular .popular-list .list-group {
@@ -740,6 +743,7 @@ img {
     margin-bottom: 5px;
     font-style: italic;
     padding-right: 10px;
+    font-size: 15px;/*27-4-2017*/
 }
 
 .detail-count-box .watched {
@@ -752,8 +756,8 @@ img {
 
 .excerpt {
     clear: both;
-    font-size: 24px;
-    line-height: 120%;
+    font-size: 21px;/*27-4-2017*/
+    line-height: 145%;/*27-4-2017*/
     margin-bottom: 15px;
     color: #7a858b;
     text-indent: 25px;
@@ -834,7 +838,7 @@ img {
 }
 
 .add-new-chapter .media-body {
-    padding-top: 0px;
+    /*padding-top: 0px;*//*27-4-2017*/
 }
 
 .edit-delete-box i {
@@ -856,7 +860,7 @@ img {
 .edit .dropdown-menu > li > a,
 .delete .dropdown-menu > li > a {
     color: #fff;
-    font-size: 24px;
+    font-size: 17px;/*27-4-2017*/
 }
 
 .heading-toppage {
