@@ -119,6 +119,7 @@
 	            ?>
     			<div class="comment-item">
     				<div class="img-user-profile"><img src="images/default-user-profile.png"></div>
+    				<div class="user-profile-name">Anonymous</div>
     				<div class="comment-text">
     					<p><?php echo $comment_comment;?></p>
     				</div>
@@ -181,6 +182,7 @@
 						success:function(data){
 							var div_comment = "<div class=\"comment-item\">";
 							div_comment += "<div class=\"img-user-profile\"><img src=\"images/default-user-profile.png\"></div>";
+							div_comment	+= "<div class=\"user-profile-name\">Anonymous</div></div>";
 							div_comment += "<div class=\"comment-text\">";
 							div_comment += "<p>" + comment + "</p>";
 							div_comment += "</div></div>";
