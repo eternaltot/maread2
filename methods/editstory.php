@@ -7,6 +7,7 @@ if(isset($_POST['btn-save']))
 $title = $_POST['title'];
 $detail = $_POST['detail'];
 $slug = $_POST['slug'];
+$category_ID = $_POST['category'];
 
 if(isset($_FILES["image"]["type"]))
 	{
@@ -37,7 +38,6 @@ if(isset($_FILES["image"]["type"]))
 				$pathsave = "upload/".date('m')."/".$_FILES['image']['name'];
 				$stmt = $conn->prepare("UPDATE maread_story SET title=?,detail=?,img_path=?,category_ID=? WHERE slug like ?");
 				// $slug = uniqid();
-				$category_ID = 0;
 				$stmt->bind_param("sssis", $title,$detail,$pathsave,$category_ID,$slug);
 				$stmt->execute();
 				/* close statement and connection */
@@ -51,7 +51,6 @@ if(isset($_FILES["image"]["type"]))
 			echo json_encode($err);
 		}
 	}else{
-		$category_ID = 0;
 		$stmt = $conn->prepare("UPDATE maread_story set title=?,detail=?,category_ID=? WHERE slug like ?");
 		$stmt->bind_param("ssis", $title,$detail,$category_ID,$slug);
 		$stmt->execute();

@@ -6,6 +6,7 @@ if(isset($_POST['btn-save']))
 
 $title = $_POST['title'];
 $detail = $_POST['detail'];
+$category_ID = $_POST['category'];
 
 if(isset($_FILES["image"]["type"]))
 	{
@@ -37,7 +38,6 @@ if(isset($_FILES["image"]["type"]))
 				$stmt = $conn->prepare("INSERT INTO maread_story (title,slug,author,detail,img_path,category_ID,likes) VALUES (?, ?, ?,?,?,?,?)");
 				$slug = uniqid();
 				$author = 0;
-				$category_ID = 0;
 				$likes = 0;
 				$stmt->bind_param("ssissii", $title,$slug,$author,$detail,$pathsave,$category_ID,$likes);
 				$stmt->execute();
