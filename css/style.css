@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Maitree|Pridi');
+
 /*font-family: 'Pridi', serif;
 font-family: 'Maitree', serif;*/
 
@@ -122,12 +123,12 @@ img {
     max-width: 80%;
     float: left;
     margin: 10px 0px;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .footer-maread {
     text-align: center;
-    font-size: 18px;
+    font-size: 13px;
     color: #fff;
     font-style: italic;
     letter-spacing: 1px;
@@ -167,7 +168,8 @@ img {
 
 .head-title .text-title {
     float: left;
-    font-size: 32px;/*27-4-2017*/
+    font-size: 24px;
+    /*27-4-2017*/
     color: #71aac8;
     font-style: italic;
 }
@@ -205,7 +207,8 @@ img {
 }
 
 .popular-list .number span {
-    font-size: 50px;/*27-4-2017*/
+    font-size: 50px;
+    /*27-4-2017*/
     color: #7a858b;
 }
 
@@ -221,10 +224,12 @@ img {
 }
 
 .popular-list .media-body h3 {
-    font-size: 21px;/*27-4-2017*/
+    font-size: 19px;
+    /*27-4-2017*/
     color: #7a858b;
     line-height: 100%;
-    margin-bottom: 10px;/*27-4-2017*/
+    margin-bottom: 10px;
+    /*27-4-2017*/
 }
 
 .favorite-data,
@@ -359,9 +364,11 @@ img {
 }
 
 .title-article {
-    font-size: 17px;/*27-4-2017*/
+    font-size: 17px;
+    /*27-4-2017*/
     color: #7a858b;
-    line-height: 145%;/*27-4-2017*/
+    line-height: 145%;
+    /*27-4-2017*/
 }
 
 .favorite-data i {
@@ -372,7 +379,8 @@ img {
     position: relative;
     top: -5px;
     left: 3px;
-    font-size: 15px;/*27-4-2017*/
+    font-size: 15px;
+    /*27-4-2017*/
 }
 
 .latest {
@@ -429,7 +437,8 @@ img {
     border: none;
     border-radius: 0px;
     margin-bottom: 0px;
-    background-color: #999;/*27-4-2017*/
+    background-color: #999;
+    /*27-4-2017*/
 }
 
 .home-popular .popular-list .list-group {
@@ -465,6 +474,10 @@ img {
     background-color: transparent!important;
 }
 
+.latest-list-row .block-row .col-3:nth-child(7) {
+    clear: both;
+}
+
 
 /*-- Story Read --*/
 
@@ -486,8 +499,10 @@ img {
     margin-top: 0px;
     margin-bottom: 0px;
     color: #fff;
-    font-size: 24px;
+    font-size: 21px;
     font-style: italic;
+    position: relative;
+    top: -1px;
 }
 
 .title-numberep span {
@@ -499,10 +514,11 @@ img {
 }
 
 .ep-number {
-    font-size: 72px;
+    font-size: 50px;
     color: #7a858b;
     font-style: italic;
     line-height: 100%;
+    padding: 20px 10px 10px 10px;
 }
 
 .story-content,
@@ -512,7 +528,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     color: #000;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 145%;
     padding-bottom: 25px;
 }
@@ -540,7 +556,7 @@ img {
 
 .author-box .description {
     margin-top: 10px;
-    max-width: 270px;
+    max-width: 400px;
 }
 
 .comment-box {
@@ -548,6 +564,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 25px;
+    margin-top: 30px;
 }
 
 .footer-ep {
@@ -555,7 +572,7 @@ img {
     background-color: #5d676c;
     margin-left: -20px;
     margin-right: -20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .footer-ep .like-count,
@@ -566,19 +583,16 @@ img {
 .footer-ep .navigator-ep {
     color: #fff;
     text-align: center;
+    top: 6px;
 }
 
 .footer-ep .like-count span.count {
     position: relative;
     margin-left: 5px;
-    /*top: -1px;*/
+    top: 2px;
+    left: -5px;
     letter-spacing: 1px;
-    font-size: x-large;
-}
-
-.footer-ep .like-count i {
-    position: relative;
-    /*top: 5px;*/
+    font-size: 17px;
 }
 
 .navigator-ep .number-ep {
@@ -594,6 +608,56 @@ img {
     font-size: 24px;
 }
 
+.footer-ep .like-count .pmd-btn-fab i {
+    position: relative;
+    font-size: 25px;
+    top: -5px;
+}
+
+.footer-ep .like-count .pmd-btn-fab {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+}
+
+.comment-row {
+    padding-top: 10px;
+}
+
+.back-to-story {
+    text-align: center;
+    font-style: italic;
+    font-size: 21px;
+}
+
+.back-to-story a {
+    color: #5d676c;
+}
+
+.comment-box .img-user-profile {
+    max-width: 48px;
+    float: left;
+}
+.comment-box .pmd-textfield {
+    margin-left: 58px;
+    min-height: 48px;
+}
+.comment-box .pmd-textfield input.form-control {
+    min-height: 48px;
+}
+.comment-box .comment-add {
+    padding-top: 20px;
+    border-top: solid 1px #eee;
+}
+.comment-box .user-profile-name {
+    margin-left: 58px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.comment-box .comment-text {
+    margin-left: 58px;
+    font-size: 15px;
+}
 
 /*-- Profile --*/
 
@@ -601,9 +665,12 @@ img {
     background-color: #bddef0;
 }
 
-.section-profile-author,
+.section-profile-author {
+    margin-bottom: -100px;
+}
+
 .section-head-page {
-    margin-bottom: -90px;
+    margin-bottom: -75px;
 }
 
 .section-profile-author + .section-row,
@@ -630,23 +697,23 @@ img {
 
 .author-name h3,
 .category-name h3 {
-    font-size: 36px;
+    font-size: 24px;
     color: #71a9c9;
     font-style: italic;
     text-align: center;
-    margin-top: 0px;
-    margin-bottom: 3px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .botton-login button {
     background-color: #71a9c9!important;
-    padding: 0px 15px;
+    padding: 4px 15px;
     min-width: 0px;
-    font-size: 20px;
+    font-size: 13px;
     text-transform: inherit;
     color: #fff;
-    letter-spacing: 1px;
     border-radius: 10px;
+    font-family: verdana;
 }
 
 .botton-login {
@@ -721,6 +788,10 @@ img {
     margin-right: 15px;
 }
 
+.detail-count-box .favorite span.num-like {
+    margin-right: 0px;
+}
+
 .bookmark-share {
     float: right;
     margin-top: 15px;
@@ -730,7 +801,7 @@ img {
     color: #71a9c9;
     font-style: italic;
     position: relative;
-    top: -10px;
+    top: 0px;
 }
 
 .detail-count-box span.favorite {
@@ -743,7 +814,8 @@ img {
     margin-bottom: 5px;
     font-style: italic;
     padding-right: 10px;
-    font-size: 15px;/*27-4-2017*/
+    font-size: 15px;
+    /*27-4-2017*/
 }
 
 .detail-count-box .watched {
@@ -756,11 +828,16 @@ img {
 
 .excerpt {
     clear: both;
-    font-size: 21px;/*27-4-2017*/
-    line-height: 145%;/*27-4-2017*/
+    font-size: 18px;
+    /*27-4-2017*/
+    line-height: 145%;
+    /*27-4-2017*/
     margin-bottom: 15px;
-    color: #7a858b;
+    color: #666;
     text-indent: 25px;
+    overflow: hidden;
+    /*27-4-2017*/
+    padding-top: 15px;
 }
 
 .story-section .media-body {
@@ -838,7 +915,8 @@ img {
 }
 
 .add-new-chapter .media-body {
-    /*padding-top: 0px;*//*27-4-2017*/
+    /*padding-top: 0px;*/
+    /*27-4-2017*/
 }
 
 .edit-delete-box i {
@@ -860,7 +938,8 @@ img {
 .edit .dropdown-menu > li > a,
 .delete .dropdown-menu > li > a {
     color: #fff;
-    font-size: 17px;/*27-4-2017*/
+    font-size: 17px;
+    /*27-4-2017*/
 }
 
 .heading-toppage {
@@ -896,17 +975,19 @@ img {
     border-color: none;
 }
 
+
 /*-- About Page --*/
 
 .about-detail {
     padding-top: 30px;
 }
+
 .about-detail h4 {
     font-size: 36px;
     color: #71a9c9;
     font-style: italic;
     text-align: left;
-    margin-bottom: 3px;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
@@ -984,6 +1065,12 @@ img {
         float: right!important;
         margin-left: 5px;
     }
+    .home-popular .popular-list .list-group li:nth-child(3),
+    .home-popular .popular-list .list-group li:nth-child(5),
+    .home-popular .popular-list .list-group li:nth-child(7),
+    .home-popular .popular-list .list-group li:nth-child(9) {
+        clear: both;
+    }
 }
 
 @media (min-width: 992px) {
@@ -1054,6 +1141,11 @@ img {
     }
     .pmd-navbar .navbar-brand {
         padding: 15px 15px 15px 15px;
+    }
+    .latest-list-row .block-row .col-3:nth-child(4),
+    .latest-list-row .block-row .col-3:nth-child(7),
+    .latest-list-row .block-row .col-3:nth-child(10) {
+        clear: both;
     }
     /*.register-write a, .register-read a {
         background-color: #149f8e!important;
