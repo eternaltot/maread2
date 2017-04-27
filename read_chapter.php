@@ -98,6 +98,7 @@
     		</div>
     	</div>
     	<div class="comment-box">
+    	Comments
     		<div class="comment-add">
     			<div class="">
     				<div class="img-user-profile"><img src="images/default-user-profile.png"></div>
