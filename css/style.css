@@ -69,13 +69,13 @@ img {
 
 .navbar-inverse .navbar-nav>li>a {
     color: #fff;
-    font-size: 21px;
+    font-size: 17px;
     letter-spacing: 1px;
     /*background-color: transparent!important;*/
 }
 
 .dropdown-menu>li>a {
-    font-size: 21px;
+    font-size: 17px;
     letter-spacing: 1px;
 }
 
@@ -122,7 +122,7 @@ img {
     max-width: 80%;
     float: left;
     margin: 10px 0px;
-    font-size: 21px;
+    font-size: 17px;
 }
 
 .footer-maread {
@@ -508,9 +508,9 @@ img {
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    color: #7a858b;
-    font-size: 24px;
-    line-height: 120%;
+    color: #000;
+    font-size: 21px;
+    line-height: 145%;
     padding-bottom: 25px;
 }
 
@@ -579,7 +579,7 @@ img {
 }
 
 .navigator-ep .number-ep {
-    font-size: 24px;
+    font-size: 21px;
     font-style: italic;
     margin-right: 9px;
     margin-left: 6px;
@@ -703,7 +703,7 @@ img {
 
 .detail-count-box {
     display: block;
-    float: left;
+    /*float: left;*/
     margin-top: 15px;
 }
 
@@ -1058,4 +1058,12 @@ img {
         color: #ffffb5!important;
         margin-top: 15px;
     }*/
+}
+
+.story-feature {
+    overflow: hidden;
+}
+
+.storyedit-section {
+    overflow: initial;
 }
