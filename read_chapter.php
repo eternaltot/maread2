@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="section-row comment-row">
-        <div class="comment-box">Comment</div>
+        
         <div class="footer-ep">
             <div class="col-md-4 like-count ">
 			<button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-link likes" type="button"><i class="material-icons pmd-lg md-light pmd-ripple-effect">favorite_border</i> </button><span class="count"><?php echo $likes > 1000 ? floor_dec($likes/1000,1) . "K" : $likes;?></span>
@@ -77,9 +77,7 @@
             <div class="col-md-4 navigator-ep"><a href="read_chapter.php?slug=<?php echo $slug_previous;?>" class="pmd-ripple-effect <?php echo $slug_previous <> '' ? '' : 'hide'; ?>"><i class="material-icons md-light">navigate_before</i></a><span class="number-ep">EP. <?php echo $chapter;?></span><a href="read_chapter.php?slug=<?php echo $slug_next;?>" class="pmd-ripple-effect <?php echo $slug_next <> '' ? '' : 'hide'; ?>"><i class="material-icons md-light">navigate_next</i></a></div>
             <div class="col-md-4"></div>
         </div>
-    </div>
-    <div class="section-row">
-    	<div class="footer-ep">
+        <div class="back-to-story">
     		<div>
     			<?php
     				$sql_story = "SELECT * FROM maread_story WHERE ID = $story_ID ";
@@ -96,7 +94,38 @@
 						$count_chapter = $row_count_chapter['count'];
 					}
     			?>
-    			<a href="chapter_list.php?slug=<?php echo $story_slug;?>"><span><?php echo $story_title;?></span> : <span><?php echo $count_chapter;?></span></a>
+    			<a href="chapter_list.php?slug=<?php echo $story_slug;?>"><span><?php echo $story_title;?></span> : <span><?php echo $count_chapter;?> ตอน</span></a>
+    		</div>
+    	</div>
+    	<div class="comment-box">
+    		<div class="comment-add">
+    			<div class="">
+    				<div class="img-user-profile"><img src="images/default-user-profile.png"></div>
+					<div class="form-group pmd-textfield">
+						<input id="txtcomment" class="form-control" type="text" placeholder="Add a comment...">
+					</div>
+    			</div>
+    			
+    		</div>
+    		<div class="comment-list">
+    			<?php
+	                $sql_comment = "SELECT * FROM maread_comment WHERE chapter_ID = $ID ORDER BY ID DESC";
+	                $result_comment = $conn->query($sql_comment);
+	                if($result_comment->num_rows > 0){
+                        while ($row = $result_comment->fetch_assoc()) {
+                            $comment_ID = $row['ID'];
+                            $comment_comment = $row['comment'];
+	            ?>
+    			<div class="comment-item">
+    				<div class="img-user-profile"><img src="images/default-user-profile.png"></div>
+    				<div class="comment-text">
+    					<p><?php echo $comment_comment;?></p>
+    				</div>
+    			</div>
+    			<?php
+    					}
+    				}
+    			?>
     		</div>
     	</div>
     </div>
@@ -130,6 +159,40 @@
 		        }
 			});
 		});
+		var ip = "";
+		$.get("http://ipinfo.io", function(response) {
+		    ip = response.ip;
+		    console.log(ip);
+		}, "jsonp");
+		$('#txtcomment').keypress(function (e) {
+			var key = e.which;
+			
+			if(key == 13)  // the enter key code
+			{
+				var comment = $("#txtcomment").val();
+				var chapter_ID = <?php echo $ID;?>;
+				if(ip !== ""){
+					$.ajax({
+						url:"methods/add_comment.php",
+						method:"POST",
+						data: {comment:comment,chapter_ID :chapter_ID,ip:ip},
+						dataType : "json",
+						success:function(data){
+							var div_comment = "<div class=\"comment-item\">";
+							div_comment += "<div class=\"img-user-profile\"><img src=\"images/default-user-profile.png\"></div>";
+							div_comment += "<div class=\"comment-text\">";
+							div_comment += "<p>" + comment + "</p>";
+							div_comment += "</div></div>";
+
+							$(".comment-list").prepend(div_comment);
+						},
+				        error:function(error){
+				        	console.log(error);
+				        }
+					});
+				}
+			}
+		});   
 	});
 
 </script>
