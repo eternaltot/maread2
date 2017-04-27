@@ -15,6 +15,7 @@
 		$likes = $row['likes'];
 		$views = $row['views'];
 		$bookmarks = $row['bookmarks'];
+		$category_ID = $row['category_ID'];
 	}
 ?>
 <div class="maincontent container">
@@ -23,6 +24,24 @@
 			<div class="form-add">
 				<form id="edit_story" action="methods/editstory.php" method="post">
 					<input type="hidden" name="slug" value="<?php echo $slug;?>">
+					<div class="form-group">
+					<label>หมวดนิยาย</label>
+                        <select id="sort" name="category" class="form-control">
+                        	<?php
+		                        $sql = "SELECT * FROM maread_category order by ID";
+		                        $result = $conn->query($sql);
+		                        if($result->num_rows > 0){
+		                            while ($row = $result->fetch_assoc()) {
+		                                $title = $row['title'];
+		                                $category_id = $row['ID'];
+		                    ?>
+                            <option value="<?php echo $category_id;?>" <?php echo $category_ID == $category_id ? "selected" : "" ?>><?php echo $title;?></option>
+                            <?php
+	                            	}
+	                            }
+                            ?>
+                        </select>
+                    </div>
 					<div class="form-group pmd-textfield">
 						<label>ชื่อเรื่อง</label>
 						<input name="title" placeholder="Title Here" type="text" class="form-control" value="<?php echo $title;?>"></input>

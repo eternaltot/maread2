@@ -30,7 +30,7 @@
                 <div class="bookmark-list-row">
                     <div class="block-row">
                     <?php
-                        $sql = "SELECT * FROM maread_story WHERE category_ID = 0 order by ID desc limit 6 ";
+                        $sql = "SELECT * FROM maread_story WHERE category_ID = $category_id order by ID desc limit 6 ";
                         $result = $conn->query($sql);
                         if($result->num_rows > 0){
                             while ($row = $result->fetch_assoc()) {

@@ -78,6 +78,28 @@
             <div class="col-md-4"></div>
         </div>
     </div>
+    <div class="section-row">
+    	<div class="footer-ep">
+    		<div>
+    			<?php
+    				$sql_story = "SELECT * FROM maread_story WHERE ID = $story_ID ";
+					$result_story = $conn->query($sql_story);
+					if($result_story->num_rows > 0){
+						$row_story = $result_story->fetch_assoc();
+						$story_slug = $row_story['slug'];
+						$story_title = $row_story['title'];
+					}
+					$sql_count_chapter = "SELECT COUNT(ID) as count FROM maread_chapter WHERE story_ID = $story_ID ";
+					$result_count_chapter = $conn->query($sql_count_chapter);
+					if($result_count_chapter->num_rows > 0){
+						$row_count_chapter = $result_count_chapter->fetch_assoc();
+						$count_chapter = $row_count_chapter['count'];
+					}
+    			?>
+    			<a href="chapter_list.php?slug=<?php echo $story_slug;?>"><span><?php echo $story_title;?></span> : <span><?php echo $count_chapter;?></span></a>
+    		</div>
+    	</div>
+    </div>
 </div>
 <?php
 	include "footer.php";
