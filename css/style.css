@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Maitree|Pridi');
+/*font-family: 'Pridi', serif;
+font-family: 'Maitree', serif;*/
+
 @font-face {
     font-family: 'db_helvethaica';
     src: url('../fonts/db_helvethaica_x_cond_v3.2-webfont.eot');
@@ -39,7 +43,9 @@ h6,
 ul,
 li,
 a {
-    font-family: 'db_helvethaica';
+    /*font-family: 'db_helvethaica';*/
+    /*font-family: 'Pridi', serif;*/
+    font-family: 'Maitree', serif;
 }
 
 img {
