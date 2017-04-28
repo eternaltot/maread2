@@ -24,9 +24,9 @@
 			<div class="form-add">
 				<form id="edit_story" action="methods/editstory.php" method="post">
 					<input type="hidden" name="slug" value="<?php echo $slug;?>">
-					<div class="form-group">
+					<div class="form-group pmd-textfield">
 					<label>หมวดนิยาย</label>
-                        <select id="sort" name="category" class="form-control">
+                        <select id="sort" name="category" class="select-simple form-control pmd-select2">
                         	<?php
 		                        $sql = "SELECT * FROM maread_category order by ID";
 		                        $result = $conn->query($sql);

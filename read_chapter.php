@@ -41,6 +41,22 @@
 		$detail_author = "Not Found";
 	}
 ?>
+<div>
+<?php
+	$sql_story = "SELECT * FROM maread_story WHERE ID = $story_ID ";
+	$result_story = $conn->query($sql_story);
+	if($result_story->num_rows > 0){
+		$row_story = $result_story->fetch_assoc();
+		$story_slug = $row_story['slug'];
+		$story_title = $row_story['title'];
+	}
+?>
+	<ul class="breadcrumb">
+    <li><a href="index.php">หน้าแรก</a></li>
+    <li><a href="chapter_list.php?slug=<?php echo $story_slug?>"><?php echo $story_title?></a></li>
+    <li class="active"><?php echo $title;?></li>
+	</ul>
+</div>
 <div class="title-numberep">
     <i class="material-icons md-light icon-navigate-before">navigate_before</i>
     <h2><?php echo $title;?></h2>
@@ -80,13 +96,7 @@
         <div class="back-to-story">
     		<div>
     			<?php
-    				$sql_story = "SELECT * FROM maread_story WHERE ID = $story_ID ";
-					$result_story = $conn->query($sql_story);
-					if($result_story->num_rows > 0){
-						$row_story = $result_story->fetch_assoc();
-						$story_slug = $row_story['slug'];
-						$story_title = $row_story['title'];
-					}
+    				
 					$sql_count_chapter = "SELECT COUNT(ID) as count FROM maread_chapter WHERE story_ID = $story_ID ";
 					$result_count_chapter = $conn->query($sql_count_chapter);
 					if($result_count_chapter->num_rows > 0){
