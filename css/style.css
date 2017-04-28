@@ -149,6 +149,7 @@ img {
 .navbar {
     /*background-color: #71a9c9;*/
     background-color: #149f8e;
+    padding-top: 10px;
 }
 
 .hilight-homepage img {
@@ -1071,6 +1072,22 @@ img {
     .home-popular .popular-list .list-group li:nth-child(9) {
         clear: both;
     }
+}
+
+/*-- breadcrumb  --*/
+
+.breadcrumb {
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.breadcrumb li a {
+    color: #666;
+    font-size: 15px;
+}
+.breadcrumb>.active {
+    color: #000;
+    font-size: 15px;
 }
 
 @media (min-width: 992px) {
