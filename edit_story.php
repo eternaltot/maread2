@@ -18,6 +18,7 @@
 		$category_ID = $row['category_ID'];
 	}
 ?>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <div class="maincontent container">
 	<div class="panel panel-info">
 		<div class="panel-body">
@@ -66,17 +67,32 @@
 <?php
 	include 'footer.php';
 ?>
+<script type="text/javascript" >
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'detail' );
+</script>
+<style type="text/css">
+	#cke_24,#cke_37,#cke_56{
+		display: none;
+	}
+</style>
 <script type="text/javascript">
 	$(function() {
 		var option = {
 			dataType : "json",
+			beforeSerialize:function(){
+				for (instance in CKEDITOR.instances) {
+				    CKEDITOR.instances[instance].updateElement();
+				}
+			},
 			beforeSubmit:function(){
-				console.log("test");
+			    // console.log(CKEDITOR.instances.detail.getData());
 			},
 			  success: function(data) {
-			  	console.log("test2");
 			  	if(data.result)
 			    	window.location.href ="chapter_list.php?slug="+data.result;
+			    // console.log("ok");
 				else
 					console.log(data.error);
 			  },

@@ -1,6 +1,7 @@
 <?php
 	include 'header.php';
 ?>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <div class="maincontent container" style="">
 	<div class="panel panel-info">
 		<div class="panel-body">
@@ -33,8 +34,8 @@
 						<input name="image" type="file" class="btn btn-info" accept="image/*"></input>
 					</div>
 					
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
-						<label for="detail" class="control-label">คำโปรย</label>
+					<div class="form-group pmd-textfield ">
+						<label class="control-label">คำโปรย</label>
 						<textarea id="detail" name="detail" class="form-control"  rows="8"></textarea>
 					</div>
 					<div class="form-group" style="text-align: center;">
@@ -49,6 +50,16 @@
 <?php
 	include 'footer.php';
 ?>
+<script type="text/javascript" >
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'detail' );
+</script>
+<style type="text/css">
+	#cke_24,#cke_37,#cke_56{
+		display: none;
+	}
+</style>
 <script type="text/javascript">
 	$(function() {
 		var option = {
@@ -61,5 +72,6 @@
 			  }
 		};
 	  $('#add_story').ajaxForm(option);
+
 	});
 </script>

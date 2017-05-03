@@ -11,6 +11,7 @@
 		$detail_author = $row['detail_author'];
 	}
 ?>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <div class="maincontent container" style="">
 	<!-- Display alert at the top-center position of the window -->
 	<button id="alert" type="button" data-positionX="center" data-positionY="top" data-effect="fadeInUp" data-type="success" data-message="บันทึกเสร็จสิ้น" data-duration="4000" class="btn pmd-ripple-effect btn-default pmd-btn-raised pmd-alert-toggle" style="display: none;">Top Center</button>
@@ -51,10 +52,26 @@
 <?php
 	include 'footer.php';
 ?>
+<script type="text/javascript" >
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'detail' );
+    CKEDITOR.replace( 'detail_author' );
+</script>
+<style type="text/css">
+	#cke_28,#cke_36,#cke_41,#cke_60,#cke_124,#cke_132,#cke_137,#cke_156{
+		display: none;
+	}
+</style>
 <script type="text/javascript">
 	$(function() {
 		var option = {
 			dataType : "json",
+			beforeSerialize:function(){
+				for (instance in CKEDITOR.instances) {
+				    CKEDITOR.instances[instance].updateElement();
+				}
+			},
 			  success: function(data) {
 			  	console.log(data);
 			  	if(data.result == "ok"){
