@@ -639,26 +639,32 @@ img {
     max-width: 48px;
     float: left;
 }
+
 .comment-box .pmd-textfield {
     margin-left: 58px;
     min-height: 48px;
 }
+
 .comment-box .pmd-textfield input.form-control {
     min-height: 48px;
 }
+
 .comment-box .comment-add {
     padding-top: 20px;
     border-top: solid 1px #eee;
 }
+
 .comment-box .user-profile-name {
     margin-left: 58px;
     font-weight: bold;
     font-size: 15px;
 }
+
 .comment-box .comment-text {
     margin-left: 58px;
     font-size: 15px;
 }
+
 
 /*-- Profile --*/
 
@@ -1013,8 +1019,12 @@ img {
         padding-top: 140px;
     }
     .navbar-nav>li {
-        width: 12.5%;
+        /*width: 12.5%;*/
         text-align: center;
+    }
+    .navbar-inverse .navbar-nav>li>a {
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .navbar-nav {
         float: none;
@@ -1074,6 +1084,7 @@ img {
     }
 }
 
+
 /*-- breadcrumb  --*/
 
 .breadcrumb {
@@ -1081,13 +1092,41 @@ img {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
 .breadcrumb li a {
     color: #666;
     font-size: 15px;
 }
+
 .breadcrumb>.active {
     color: #000;
     font-size: 15px;
+}
+
+
+/*-- Login & Register --*/
+
+.form-section {
+    overflow: hidden;
+    padding-bottom: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-section .text-title {
+    float: none;
+    text-align: center;
+}
+
+.botton-submit {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.form-section button {
+    background-color: #149f8e;
+    color: #fff;
 }
 
 @media (min-width: 992px) {
@@ -1179,4 +1218,9 @@ img {
 
 .storyedit-section {
     overflow: initial;
+}
+
+form#add_story input[type=file] {
+    display: block;
+    width: 100%;
 }
