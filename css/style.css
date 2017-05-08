@@ -1082,6 +1082,21 @@ img {
     .home-popular .popular-list .list-group li:nth-child(9) {
         clear: both;
     }
+    .form-register {
+        max-width: inherit;
+    }
+    .register-2-type {
+        display: flex;
+        align-items: center;
+    }
+    .register-email {
+        /*border-left: solid 1px #ddd;*/
+    }
+    .register-fb {
+    text-align: center;
+    padding-top: 20px;
+    border-bottom: none!important;
+}
 }
 
 
@@ -1124,6 +1139,7 @@ img {
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
 .form-section button {
     background-color: #149f8e;
     color: #fff;
@@ -1231,6 +1247,11 @@ form#add_story input[type=file] {
     margin-right: auto;
     margin-top: 30px;
 }
-.form-register {
-    max-width: inherit;
+.register-fb {
+    text-align: center;
+    padding-top: 20px;
+    border-bottom: solid 1px #eee;
+}
+.register-fb a {
+    background-color: #3b5998;
 }

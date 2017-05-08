@@ -32,8 +32,40 @@
 <!-- Main Content -->
         <div class="maincontent">
         <button id="password-not-match" type="button" data-positionX="center" data-positionY="top" data-effect="fadeInUp" data-type="error" data-message="รหัสผ่านไม่ตรงกัน" data-duration="4000" class="btn pmd-ripple-effect btn-default pmd-btn-raised pmd-alert-toggle" style="display: none;">Top Center</button>
-            <div class="section-row">
-                <div class="form-section head-title">
+            <div class="section-row register-2-type">
+            <div class="form-section form-register register-fb col-md-6 head-title">
+            	<?php
+								$helper = $fb->getRedirectLoginHelper();
+
+								$permissions = ['public_profile','email']; // Optional permissions
+								$loginUrl = $helper->getLoginUrl('http://localhost:88/maread2/fb-callback.php', $permissions);
+
+								echo '<a class="btn pmd-btn-raised pmd-ripple-effect btn-info" href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook</a>';
+								// if(isset($_SESSION['fb_access_token'])){
+								// 	$accessToken = $_SESSION['fb_access_token'];
+								// 	try {
+								// 	  // Returns a `Facebook\FacebookResponse` object
+								// 	  $response = $fb->get('/me?fields=id,name,email', $accessToken);
+								// 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
+								// 	  echo 'Graph returned an error: ' . $e->getMessage();
+								// 	  exit;
+								// 	} catch(Facebook\Exceptions\FacebookSDKException $e) {
+								// 	  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+								// 	  exit;
+								// 	}
+								// 	$user = $response->getGraphUser();
+								// 	echo '<input type="hidden" name="fb_id" id="fb_id" value="'.$user["id"].'"></input>';
+								// }else{
+								// 	echo '<input type="hidden" name="fb_id" id="fb_id" value=""></input>';
+								// }
+								if(isset($_SESSION['fb_id_register'])){
+									echo '<input type="hidden" name="fb_id" id="fb_id" value="'.$_SESSION['fb_id_register'].'"></input>';
+								}else{
+									echo '<input type="hidden" name="fb_id" id="fb_id" value=""></input>';
+								}
+	                        ?>
+            </div>
+                <div class="form-section form-register register-email col-md-6 head-title">
                     <h3 class="text-title">ลงทะเบียน</h3>
                     <form id="register_form" method="post" action="methods/register.php">
 	                    <div class="form-group pmd-textfield pmd-textfield-floating-label email">
@@ -67,36 +99,6 @@
 	                    <input type="hidden" id="role" name="role" value="<?php echo $role;?>"></input>
 	                    <div class="botton-submit">
 	                        <button type="submit" id="btn-save" name="btn-save" class="btn pmd-btn-raised pmd-ripple-effect btn-default">Create Account</button>
-	                        <?php
-								$helper = $fb->getRedirectLoginHelper();
-
-								$permissions = ['public_profile','email']; // Optional permissions
-								$loginUrl = $helper->getLoginUrl('http://localhost:88/maread2/fb-callback.php', $permissions);
-
-								echo '<a class="btn pmd-btn-raised pmd-ripple-effect btn-info" href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook</a>';
-								// if(isset($_SESSION['fb_access_token'])){
-								// 	$accessToken = $_SESSION['fb_access_token'];
-								// 	try {
-								// 	  // Returns a `Facebook\FacebookResponse` object
-								// 	  $response = $fb->get('/me?fields=id,name,email', $accessToken);
-								// 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
-								// 	  echo 'Graph returned an error: ' . $e->getMessage();
-								// 	  exit;
-								// 	} catch(Facebook\Exceptions\FacebookSDKException $e) {
-								// 	  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-								// 	  exit;
-								// 	}
-								// 	$user = $response->getGraphUser();
-								// 	echo '<input type="hidden" name="fb_id" id="fb_id" value="'.$user["id"].'"></input>';
-								// }else{
-								// 	echo '<input type="hidden" name="fb_id" id="fb_id" value=""></input>';
-								// }
-								if(isset($_SESSION['fb_id_register'])){
-									echo '<input type="hidden" name="fb_id" id="fb_id" value="'.$_SESSION['fb_id_register'].'"></input>';
-								}else{
-									echo '<input type="hidden" name="fb_id" id="fb_id" value=""></input>';
-								}
-	                        ?>
 	                    </div>
 	                    
                     </form>
