@@ -22,6 +22,8 @@
     <!-- TOT Style -->
     <link href="css/style_tot.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+    <!-- Material Design Select -->
+    
 
 </head>
 
@@ -78,6 +80,7 @@
                 <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse pmd-navbar-sidebar">
                     <div id="box-row-2">
                         <ul class="nav navbar-nav" style="display:none;">
+                            <li><a href="index.php"><span class="menu-mobile">หน้าแรก</span><!-- <span class="menu-desktop"><img src="images/menu_romantic.gif"></span> --> <span class="sr-only">(current)</span></a></li>
                             <li><a href="category.php?category=1"><span class="menu-mobile">นิยายรักโรแมนติค</span><!-- <span class="menu-desktop"><img src="images/menu_romantic.gif"></span> --> <span class="sr-only">(current)</span></a></li>
                             <li><a href="category.php?category=2"><span class="menu-mobile">นิยายแปลจีน</span><!-- <span class="menu-desktop"><img src="images/menu_drama.gif"></span> --></a></li>
                             <li><a href="category.php?category=3"><span class="menu-mobile">นิยายอิโรติค</span><!-- <span class="menu-desktop"><img src="images/menu_fantasy.gif"></span> --></a></li>
@@ -110,8 +113,8 @@
                             </li>
                             <li><a href="javascript:void(0);">วิธีเติมเหรียญ</a></li>
                             <li><a href="about.php">เกี่ยวกับเรา</a></li>
-                            <li class="register-write"><a href="javascript:void(0);">สมัครเขียน</a></li>
-                            <li class="register-read"><a href="javascript:void(0);">สมัครอ่าน</a></li>
+                            <li class="register-write"><a href="register.php?role=writer">สมัครเขียน</a></li>
+                            <li class="register-read"><a href="register.php?role=reader">สมัครอ่าน</a></li>
                         </ul>
                         <!-- Enf Menu Example 2 -->
                     </div>
